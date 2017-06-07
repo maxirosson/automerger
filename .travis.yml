@@ -1,0 +1,9 @@
+language: java
+
+sudo: false
+
+jdk:
+  - oraclejdk8
+sudo: required
+install: sudo pip install requests
+before_script: python github-automerger.py ${GH_TOKEN} maxirosson/automerger master staging maxirosson
