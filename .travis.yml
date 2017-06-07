@@ -4,6 +4,6 @@ sudo: required
 
 jdk:
   - oraclejdk8
-install: pip install requests
+install: sudo pip install requests
 script: ./gradlew --version
 after_script: python github-automerger.py ${GH_TOKEN} maxirosson/automerger master staging maxirosson
