@@ -1,0 +1,20 @@
+version = '1.0.0'
+
+def a = 1
+def b = 2
+def c = 3
+
+buildscript {
+	repositories {
+		jcenter()
+		String localMavenRepo = project.hasProperty('LOCAL_MAVEN_REPO') ? project.ext.get('LOCAL_MAVEN_REPO') : System.getenv('LOCAL_MAVEN_REPO')
+		if (localMavenRepo != null) {
+			maven { url localMavenRepo }
+		}
+	}
+	dependencies {
+		classpath 'com.jdroidframework:jdroid-gradle-java-plugin:0.16.2-SNAPSHOT'
+	}
+}
+
+apply plugin: 'com.jdroid.java.library'
