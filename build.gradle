@@ -1,4 +1,4 @@
-version = '5.0.0'
+version = '6.0.0'
 
 def a = 1
 def b = 2
